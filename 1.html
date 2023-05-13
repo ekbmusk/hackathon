@@ -7,14 +7,17 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs>
-        <a-marker preset="hiro">
+        <img id="1img" src="https://ekbmusk.github.io/hackathon/1.png">
+        <!--<a-marker preset="hiro">
             <a-entity
             position="0 0 0"
             scale="0.1 0.1 0.1"
-            gltf-model="https://ekbmusk.github.io/hackathon/1.gltf"
+            gltf-model="https://ekbmusk.github.io/hackathon/1.png"
             ></a-entity>
+        -->
+        <a-image width="1" height="1" src="#1img"></a-image>
         </a-marker>
-        <a-entity camera></a-entity>
+        <a-entity camera preset='hiro'></a-entity>
         </a-scene>
     </body>
 </html>
