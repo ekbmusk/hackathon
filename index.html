@@ -13,6 +13,20 @@
   <body>
     
     <script>
+      var markerRoot = new THREE.Group
+      scene.add(markerRoot)
+      var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+ 		type : 'pattern',
+		patternUrl : THREEx.ArToolkitContext.baseURL + '../patt.hiro'
+	})
+
+      var smoothedRoot = new THREE.Group()
+      scene.add(smoothedRoot)
+      var smoothedControls = new THREEx.ArSmoothedControls(smoothedRoot, {
+		lerpPosition: 0.4,
+		lerpQuaternion: 0.3,
+		lerpScale: 1,
+		
       const scene = new THREE.Scene();
       const camera = new THREE.Camera();
       scene.add(camera)
@@ -27,7 +41,8 @@
       const material = new THREE.MeshBasicMaterial({ map: loader.load('1.png'), });
       const plane = new THREE.Mesh( geometry, material );
       scene.add( plane );
-
+      arWorldRoot.add(plane);
+	    
       function animate() {
 	      requestAnimationFrame( animate );
 	      renderer.render( scene, camera );
