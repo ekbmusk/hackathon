@@ -19,9 +19,11 @@
       const renderer = new THREE.WebGLRenderer();
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
-                                                                                        
+                  
+      const loader = new THREE.TextureLoader();
+	    
       const geometry = new THREE.PlaneGeometry( 1, 1 );
-      const material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+      const material = new THREE.MeshBasicMaterial( map: loader.load('1.png'), );
       const plane = new THREE.Mesh( geometry, material );
       scene.add( plane );
 
