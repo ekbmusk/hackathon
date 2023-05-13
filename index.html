@@ -23,7 +23,7 @@
       const loader = new THREE.TextureLoader();
 	    
       const geometry = new THREE.PlaneGeometry( 1, 1 );
-      const material = new THREE.MeshBasicMaterial( map: loader.load('1.png'), );
+      const material = new THREE.MeshBasicMaterial({ map: loader.load('1.png'), });
       const plane = new THREE.Mesh( geometry, material );
       scene.add( plane );
 
