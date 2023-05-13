@@ -13,6 +13,7 @@
   <body>
     
     <script>
+      const scene = new THREE.Scene();
       var markerRoot = new THREE.Group
       scene.add(markerRoot)
       var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
@@ -27,7 +28,6 @@
 		lerpQuaternion: 0.3,
 		lerpScale: 1,})
 		
-      const scene = new THREE.Scene();
       const camera = new THREE.Camera();
       scene.add(camera)
       
